@@ -1,0 +1,8 @@
+---
+title: where_exp example
+---
+
+{%- assign apps = site.data.apps | where_exp: 'app', 'app.uninstalled == nil and remember == nil' | sort: 'name' -%}
+
+<h1>{{ title }}</h1>
+<pre>{{ apps | inspect }}</pre>
